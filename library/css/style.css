@@ -1,26 +1,4 @@
 /*! Made with Bones: http://themble.com/bones :) */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Main Stylesheet
-
-Here's where the magic happens. Here, you'll see we are calling in
-the separate media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the rest
-of the styles inside media queries.
-
-Helpful articles on Sass file organization:
-http://thesassway.com/advanced/modular-css-naming-conventions
-
-******************************************************************/
-/*********************
-IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
-*********************/
-/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -69,19 +47,6 @@ template {
    Base
    ========================================================================== */
 /**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */ }
-
-/**
  * Remove default margin.
  */
 body {
@@ -112,12 +77,55 @@ a:hover {
 /* ==========================================================================
    Typography
    ========================================================================== */
+body {
+  font-size: 16px; }
+
+@font-face {
+  font-family: 'Amaranth Regular';
+  src: url("../fonts/Amaranth-Regular.woff") format("woff");
+  /* relative to here i.e. library/css */
+  font-weight: normal;
+  font-style: normal; }
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: "Amaranth Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+  word-break: break-word;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-h1 {
-  font-size: 2em;
+h1, h1 a {
+  font-size: 2rem;
   margin: 0.67em 0; }
 
 /**
@@ -237,14 +245,15 @@ menu {
 
 ol,
 ul {
-  padding: 0;
-  list-style-type: none; }
+  padding: 0 0 0 1em;
+  list-style: disc outside none; }
 
 /*
  * Corrects list images handled incorrectly in IE7.
  */
 nav ul,
 nav ol {
+  padding: 0;
   list-style: none;
   list-style-image: none; }
 
@@ -454,78 +463,6 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
-******************************************************************/
-/*********************
-FONT FACE (IN YOUR FACE)
-*********************/
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  library/fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
-*/
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-/*
- i imported this one in the functions file so bones would look sweet.
- don't forget to remove it for your site.
-*/
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
-p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
-  word-break: break-word;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
-
 /******************************************************************
 Site Name:
 Author:
@@ -619,7 +556,7 @@ Author:
 
 Stylesheet: Grid Stylesheet
 
-I've seperated the grid so you can swap it out easily. It's
+I've separated the grid so you can swap it out easily. It's
 called at the top the style.scss stylesheet.
 
 There are a ton of grid solutions out there. You should definitely
@@ -908,9 +845,9 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .blue-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Amaranth Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 0.9em;
   font-size: 34px;
   line-height: 34px;
@@ -922,7 +859,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
   .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
-    color: white;
+    color: #fff;
     text-decoration: none; }
   .blue-btn:active, .comment-reply-link:active, #submit:active {
     top: 1px; }
@@ -989,7 +926,6 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #eaedf2;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1062,7 +998,7 @@ textarea,
   .field.is-invalid {
     color: #fbe3e4;
     border-color: #fbe3e4;
-    background-color: white;
+    background-color: #fff;
     background-position: 99% center;
     background-repeat: no-repeat;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
@@ -1102,7 +1038,7 @@ textarea,
   .field.is-valid {
     color: #e6efc2;
     border-color: #e6efc2;
-    background-color: white;
+    background-color: #fff;
     background-position: 99% center;
     background-repeat: no-repeat;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
@@ -1237,17 +1173,16 @@ Author:
 
 Stylesheet: Base Mobile Stylesheet
 
-Be light and don't over style since everything here will be
+Be light and dont over style since everything here will be
 loaded by mobile devices. You want to keep it as minimal as
 possible. This is called at the top of the main stylsheet
 and will be used across all viewports.
 
-******************************************************************/
+ ******************************************************************/
 /*********************
 GENERAL STYLES
-*********************/
+ *********************/
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -1257,7 +1192,7 @@ body {
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
-********************/
+ ********************/
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
@@ -1295,39 +1230,39 @@ style a page via class
 /* individual paged (i.e. body.paged-3) */
 /*********************
 LAYOUT & GRID STYLES
-*********************/
+ *********************/
 .wrap {
   width: 96%;
   margin: 0 auto; }
 
 /*********************
 LINK STYLES
-*********************/
+ *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #5c6b80;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: #495565; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
     so it basically works like the :hover selector
     for mobile devices.
-    */
+     */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
-******************************************************************/
+ ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
-  if you're going to use webfonts, be sure to check your weights
+  if youre going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
-  */
+   */
   /* removing text decoration from all headline links */ }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
@@ -1356,66 +1291,57 @@ h5, .h5 {
 
 /*********************
 HEADER STYLES
-*********************/
+ *********************/
 .header {
   background-color: #323944; }
+  .header #inner-header {
+    padding: 1vw; }
 
-#logo {
-  margin: 0.75em 0; }
-  #logo a {
-    color: white; }
+#logo a {
+  color: #fff; }
+
+#description {
+  color: #f8f9fa;
+  font-size: 1.5rem; }
 
 /*********************
 NAVIGATION STYLES
-*********************/
+ *********************/
 /*
 all navs have a .nav class applied via
 the wp_menu function; this is so we can
 easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
-*/
+ */
 .nav {
   border-bottom: 0;
   margin: 0;
+  margin-top: 1em;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
-  .nav li {
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */ }
-    .nav li a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      padding: 0.75em;
-      /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */ }
-    .nav li ul.sub-menu li a,
-    .nav li ul.children li a {
-      padding-left: 30px; }
+  .nav li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em; }
+  .nav li ul.sub-menu li a,
+  .nav li ul.children li a {
+    padding-left: 30px; }
 
 /* end .nav */
 /*********************
 POSTS & CONTENT STYLES
-*********************/
+ *********************/
 #content {
   margin-top: 1.5em; }
 
 .hentry {
-  background-color: white;
+  background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em;
-  border: 1px solid #cccccc; }
+  border: 1px solid #ccc; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
@@ -1448,13 +1374,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */ }
+  padding: 0 1.5em 0; }
   .entry-content p {
     margin: 0 0 1.5em; }
   .entry-content table {
@@ -1529,14 +1449,17 @@ POSTS & CONTENT STYLES
 
 /* end .wp-caption */
 /* image gallery styles */
+.gallery .gallery-item {
+  display: inline-block;
+  margin-right: 15px; }
+
 /* end .gallery */
-/* gallery caption styles */
 .tags {
   margin: 0; }
 
 /******************************************************************
 PAGE NAVI STYLES
-******************************************************************/
+ ******************************************************************/
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0; }
@@ -1545,7 +1468,7 @@ PAGE NAVI STYLES
   text-align: center; }
   .pagination ul {
     display: inline-block;
-    background-color: white;
+    background-color: #fff;
     white-space: nowrap;
     padding: 0;
     clear: both;
@@ -1570,12 +1493,12 @@ PAGE NAVI STYLES
     color: #2980b9; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
       background-color: #2980b9;
-      color: white; }
+      color: #fff; }
   .pagination .current {
     cursor: default;
     color: #5c6b80; }
     .pagination .current:hover, .pagination .current:focus {
-      background-color: white;
+      background-color: #fff;
       color: #5c6b80; }
 
 /* end .bones_page_navi */
@@ -1588,7 +1511,7 @@ PAGE NAVI STYLES
 /* end .wp-prev-next */
 /******************************************************************
 COMMENT STYLES
-******************************************************************/
+ ******************************************************************/
 /* h3 comment title */
 #comments-title {
   padding: 0.75em;
@@ -1647,7 +1570,7 @@ COMMENT STYLES
     margin-left: 7px;
     padding: 7px; }
   .comment.odd {
-    background-color: white; }
+    background-color: #fff; }
   .comment.even {
     background: #f8f9fa; }
 
@@ -1674,7 +1597,7 @@ COMMENT STYLES
 
 /******************************************************************
 COMMENT FORM STYLES
-******************************************************************/
+ ******************************************************************/
 .comment-respond {
   padding: 1.5em;
   border-top: 1px solid #f8f9fa; }
@@ -1718,35 +1641,36 @@ COMMENT FORM STYLES
 
 /*********************
 SIDEBARS & ASIDES
-*********************/
+ *********************/
 .widget ul li {
   /* deep nesting */ }
 
 .no-widgets {
-  background-color: white;
+  background-color: #fff;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 2px;
   margin-bottom: 1.5em; }
 
 /*********************
 FOOTER STYLES
-*********************/
+ *********************/
 .footer {
   clear: both;
   background-color: #323944;
-  color: #f8f9fa; }
+  color: #f8f9fa;
+  padding: 1vw; }
 
 /*
 if you checked out the link above:
 http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
+youll want to style the footer nav
 a bit more in-depth. Remember to keep
-it simple because you'll have to
+it simple because youll have to
 override these styles for the desktop
 view.
-*/
+ */
 /* end .footer-links */
 /*********************
 LARGER MOBILE DEVICES
@@ -1755,6 +1679,8 @@ larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 *********************/
 @media only screen and (min-width: 481px) {
+  /*	// styles in 481up.scss
+  	//@import "breakpoints/481up"; */
   /******************************************************************
   Site Name:
   Author:
@@ -1819,6 +1745,17 @@ tweeners.
       clear: both; }
 
   /* end .entry-content */
+  .page-id-5 .entry-content ul {
+    margin: -1em 0 1em 2vw;
+    padding: 1em;
+    padding-left: 2em;
+    list-style: disc outside none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #efe6c5;
+    border-color: 1px solid #938d59; }
+
   /*********************
   FOOTER STYLES
   *********************/
@@ -1884,7 +1821,7 @@ you can add resource intensive styles.
         has the possibility of being a mobile device.
         */ }
         .nav li a:hover, .nav li a:focus {
-          color: white;
+          color: #fff;
           text-decoration: underline; }
       .nav li ul.sub-menu,
       .nav li ul.children {
@@ -1925,7 +1862,8 @@ you can add resource intensive styles.
   SIDEBARS & ASIDES
   *********************/
   .sidebar {
-    margin-top: 2.2em; }
+    background-color: #efe6c5;
+    border-radius: 3px; }
 
   .widgettitle {
     border-bottom: 2px solid #444;
@@ -2116,3 +2054,5 @@ be set to display none.
   .respond-form,
   nav {
     display: none; } }
+
+/*# sourceMappingURL=style.css.map */
