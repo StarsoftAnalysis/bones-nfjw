@@ -22,6 +22,8 @@ LAUNCH BONES
 Let's get everything up and running.
 *********************/
 
+require_once(get_theme_file_path('debug.php'));
+
 function bones_ahoy() {
 
   //Allow editor style.

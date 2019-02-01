@@ -1,5 +1,6 @@
 			<footer class="footer" role="contentinfo">
 				<div id="inner-footer" class="wrap cf">
+                    <?php /*
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => '',                              // remove nav container
@@ -14,8 +15,17 @@
                         'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 						)); ?>
-					</nav>
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+                    </nav>
+                    */ ?>
+                    <p class="source-org copyright">Copyright 2018,2019 <?php bloginfo('name'); ?></p>
+<?php
+                    if (is_user_logged_in()) {
+                        // Log out and go back to home page
+                        echo '<p class=loginout><a href="', wp_logout_url('/'), '">Log out</a></p>'; 
+                    } else {
+                        echo '<p class=loginout><a href="/wp-login.php">Log in</a></p>';
+                    }
+?>
 				</div>
 			</footer>
 		</div>

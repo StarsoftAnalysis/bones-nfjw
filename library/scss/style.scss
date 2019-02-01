@@ -2110,8 +2110,18 @@ FOOTER STYLES
 	clear: both;
 	background-color: $black;
 	color: $light-gray;
-
 	padding: 1vw; // FIXME $headfootpad;
+}
+
+.copyright {
+	float: left;
+}
+p.loginout {
+	float: right;
+}
+p.loginout a, p.loginout a:visited {
+	text-decoration: none;
+	color: white;
 }
 
 /*
